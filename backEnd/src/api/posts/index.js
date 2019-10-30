@@ -8,7 +8,7 @@ posts.get('/', postsCtrl.list);
 posts.post('/', checkLoggedIn, postsCtrl.write);
 
 posts.get('/:id', checkLoggedIn, postsCtrl.getPostById, postsCtrl.read);
-posts.delete('/:id', checkLoggedIn, postsCtrl.checkOwnPost, postsCtrl.getPostById, postsCtrl.remove);
-posts.patch('/:id', checkLoggedIn, postsCtrl.checkOwnPost, postsCtrl.getPostById, postsCtrl.update);
+posts.delete('/:id', checkLoggedIn, postsCtrl.getPostById, postsCtrl.checkOwnPost, postsCtrl.remove);
+posts.patch('/:id', checkLoggedIn, postsCtrl.getPostById, postsCtrl.checkOwnPost, postsCtrl.update);
 
 export default posts;
