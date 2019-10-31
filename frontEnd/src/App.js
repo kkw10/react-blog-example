@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import PostPage from './pages/PostPage';
 import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
+import { Helmet } from 'react-helmet-async'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -32,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
 const App = () => {
   return (
     <>
+      <Helmet>
+        <title>REACTERS</title>
+      </Helmet>
       <GlobalStyle />
       <Route component={PostListPage} path={['/@:username', '/']} exact />
       <Route component={LoginPage} path="/login" />
